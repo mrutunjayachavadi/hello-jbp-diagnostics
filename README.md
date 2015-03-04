@@ -3,6 +3,7 @@ Example Java web app to test https://github.com/lhotari/java-buildpack-diagnosti
 
 ## Deploying app
 ```
+./gradlew war
 cp manifest.yml.template manifest.yml
 $EDITOR manifest.yml
 cf push
