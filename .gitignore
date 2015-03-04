@@ -1,0 +1,12 @@
+.classpath
+.project
+*.iml
+*.ipr
+*.iws
+.idea/
+.gradletasknamecache
+.gradle/
+build/
+bin/
+out/
+manifest.yml

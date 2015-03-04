@@ -1,0 +1,12 @@
+---
+applications:
+- name: enter unique app name here
+  memory: 1024M
+  instances: 1
+  buildpack: https://github.com/lhotari/java-buildpack.git#jbp-diagnostics
+  path: build/libs/hello-jbp-diagnostics.war
+  env:
+    JBPDIAG_AWS_ACCESS_KEY: see https://github.com/lhotari/java-buildpack-diagnostics-app#amazon-s3-setup
+    JBPDIAG_AWS_SECRET_KEY: AWS secret key, see previous url to setup
+    JBPDIAG_AWS_BUCKET: AWS bucket for dumps
+    JBPDIAG_TOKEN: _this_should_be_a_random_token_ - you can use `pwgen 20` or `uuidgen` to create it
