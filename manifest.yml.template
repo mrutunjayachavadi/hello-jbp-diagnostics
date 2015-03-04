@@ -3,7 +3,7 @@ applications:
 - name: enter unique app name here
   memory: 1024M
   instances: 1
-  buildpack: https://github.com/lhotari/java-buildpack.git#jbp-diagnostics
+  buildpack: https://github.com/lhotari/java-buildpack.git#jbp-diagnostics-oom
   path: build/libs/hello-jbp-diagnostics.war
   env:
     JBPDIAG_AWS_ACCESS_KEY: see https://github.com/lhotari/java-buildpack-diagnostics-app#amazon-s3-setup
