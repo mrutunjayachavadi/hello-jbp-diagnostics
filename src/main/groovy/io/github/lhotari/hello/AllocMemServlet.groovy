@@ -7,18 +7,16 @@ import javax.servlet.ServletResponse
 import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServletResponse
 
-@WebServlet("/cause-oom")
-class OOMServlet extends GenericServlet {
-
-    static List<byte[]> container=[]
-
+@WebServlet("/allocmem")
+class AllocMemServlet extends GenericServlet {
     @Override
     void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         def out=((HttpServletResponse)res).writer
-        out << "Causing OOM"
+        List<byte[]> container=[]
+        out << "Causing OOM by allocating to local variable. Memory is available after thread crashes with OOME."
         out.flush()
         while(true) {
-            container.add(new byte[50000000])
+            container.add(new byte[5000000])
             out.print(".")
             out.flush()
             Thread.sleep(50)
