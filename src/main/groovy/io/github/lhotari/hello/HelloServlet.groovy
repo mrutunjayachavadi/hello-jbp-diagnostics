@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletResponse
 class HelloServlet extends GenericServlet {
     @Override
     void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        
+        def shell = new GroovyShell()
+        500.times {
+        shell.evaluate "x = 100"
+        }
+        
         def out=((HttpServletResponse)res).writer
         out << "Hello world!"
         out.close()
