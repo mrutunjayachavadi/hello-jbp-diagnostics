@@ -11,6 +11,14 @@ import javax.servlet.http.HttpServletResponse
 class HelloServlet extends GenericServlet {
     @Override
     void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        
+        def tmp = [:]
+        def mymap = [:]
+        for (i = 0; i <1000000; i++) {
+        mymap.put(new Integer(i), new String(" New String"))
+        tmp.put(new Integer(i),mymap.get(i));
+}
+        
         def out=((HttpServletResponse)res).writer
         out << "Hello world!"
         out.close()
